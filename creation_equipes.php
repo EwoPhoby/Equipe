@@ -11,7 +11,7 @@ ini_set('display_errors','off');
 	<body> 
 
 		<ul class="navbar">
-  			<li><a href="accueil.html">Accueil</a>
+  			<li><a href="accueil.php">Accueil</a>
   			<li><a href="equipe.php">Equipes</a>
   			<li><a href="ville.php">Par villes</a>
   			<li><a href="joueurs.php">Joueurs</a>
