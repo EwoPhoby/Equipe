@@ -72,14 +72,14 @@ $donnees = $reponse->fetch();
 $reponse2 = $bdd->query("SELECT * FROM stade WHERE id = '$club' ");
 $donnees2 = $reponse2->fetch();
 //$club = $_POST['club'];  // Storing Selected Value In Variable
-echo $donnees['nom'] ." est un club de la ville de " .$donnees['ville']." son stade ".$donnees2['nom']. " et il a une capacite de ".$donnees2['capacite'] ." places";  // Displaying Selected Value
+echo $donnees['nom'] ." est un club de la ville de " .$donnees['ville']. " crée en ".$donnees['annee']." son stade est ".$donnees2['nom']. " et il a une capacite de ".$donnees2['capacite'] ." places";  // Displaying Selected Value
 echo '<br />';
 
 
 }
 ?>
 <p>ajouter equipe
-<form action="traitement.php" method="post">
+<form action="ajout_equipe.php" method="post">
    
         <input type="text" id="nom" name="nom" placeholder="Nom equipe">
         <input type="text" id="ville" name="ville" placeholder="Ville">
@@ -91,7 +91,7 @@ echo '<br />';
 </p>
 
 <p>supprimer equipe
-<form action = "traitement.php" method="post">
+<form action = "suppression_equipe.php" method="post">
     <select id="club" name="id" required>
         <option value ="1" selected=""> Manchester City</option>
         <option value ="2"> Manchester United</option>
@@ -113,22 +113,20 @@ echo '<br />';
         <option value ="18"> Wolverhampton Wanderers</option>
         <option value ="19"> Cardiff City FC</option>
         <option value ="20"> Fulham FC</option>
-        <option value ="23"> supp</option>
+        <option value ="25"> supp</option>
     </select><input type = "submit" name="envoi3" value = "Envoyer"><br><br>
 
   </form>
 </p>
-<?php
-      if(isset($_POST['envoi3'])){ 
-      $id=$_POST['id'];
-      $requete="DELETE FROM club WHERE id=\"$id\"";
-      //$link->query($requete)or die("Deleting Match Failed: ". $link->error);
-      printf("equipe supprime. ");
-      printf("<br>");
-      //$link->close();
-    }
-    ?>
 
+<?php
+
+if(isset($_POST['envoi3']))
+{
+  printf("equipe supprime. ");
+
+}
+?>
 &nbsp;
 <!-- Signer et dater la page, c'est une question de politesse! -->
 <address>Fait le 5 avril 2004<br>
