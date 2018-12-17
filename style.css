@@ -4,38 +4,174 @@ body {
           Times, serif;
     color: purple;
     background-color: #d8da3d }
-  ul.navbar {
+  ul.menu {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 50;
     position: absolute;
     top: 2em;
     left: 1em;
     width: 9em }
   h1 {
-    font-family: Helvetica, Geneva, Arial,
-          SunSans-Regular, sans-serif }
-  ul.navbar li {
+    font-family:sans-serif;
+    text-align: center;
+    font-size: 45;
+     }
+
+img.fut {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-width:8px;
+    border-style:inset;
+    border-color:black; }
+  
+  
+  ul.menu li {
     background: white;
     margin: 0.5em 0;
     padding: 0.3em;
-    border-right: 1em solid black }
- ul.navbar li:hover {
+    border-right: 8px solid black }
+ ul.menu li:hover {
     background: red;
     margin: 0.5em 0;
     padding: 0.3em;
     border-right: 1em solid black }
 
-  ul.navbar a {
+  ul.menu a {
     text-decoration: none }
   a:link {
     color: blue }
   a:visited {
-    color: purple }
-  address {
-    margin-top: 1em;
-    padding-top: 1em;
-    border-top: thin dotted }
-img{
-	text-align:center; 
+    color: blue }
+  
+
+
+form {
+ 
+ padding:10px;
+ width:500px;
+ border: 1px;
+ border-color:purple;
+ }
+fieldset {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ border:1px solid #DF3F3F;
+ }
+
+label {
+ margin-top:10px;
+ display:block;
+ }
+label.inline {
+ display:inline;
+ margin-right:50px;
+ }
+input, textarea, select, option {
+ background-color:#FFF3F3;
+ }
+input, textarea, select {
+ margin-top:10px; 
+ padding:3px;
+ border:1px solid #F5C5C5;
+ border-radius:5px;
+ 
+ box-shadow:1px 1px 2px #C0C0C0 inset;
+ }
+select {
+ margin-top:10px;
+ }
+
+input[type=submit], input[type=reset] {
+ width:100px;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #D83F3D;
+ cursor:pointer;
+ }
+div.corps{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+ }
+div.corps h3{
+  margin-left:200px;
+  margin-right: auto;
+  text-decoration: underline;
+ }
+ div.form1{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+   border-width:5px;
+    border-style:dotted;
+    border-color:black;
+ }
+
+ div.form1 p{
+  text-align: center;
+  font-weight: 
+  ;
+ }
+  div.recherche{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+   border-width:5px;
+    border-style:dotted;
+    border-color:black;
+ }
+
+ div.recherche p{
+  text-align: center;
+  font-weight: bold;
+ }
+ form.as{
+  margin-left: 70px;
+  margin-right: auto; 
+ }
+
+ div.nat{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+   border-width:5px;
+    border-style:dotted;
+    border-color:black;
+ }
+
+ div.nat p{
+  text-align: center;
+  font-weight: bold;
+ }
+ div.der{
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+   border-width:5px;
+    border-style:dotted;
+    border-color:black;
+ }
+
+ div.der p{
+  text-align: center;
+  font-weight: bold;
+ }
+table
+
+{
+
+    border-collapse: collapse;
+
+}
+
+td, th /* Mettre une bordure sur les td ET les th */
+
+{
+
+    border: 1px solid black;
+
+}
+tr{
+  border: 1px solid black;
 }

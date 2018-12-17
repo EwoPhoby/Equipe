@@ -23,7 +23,7 @@ catch(Exception $e)
 <body>
 
 <!-- Menu de navigation du site -->
-<ul class="navbar">
+<ul class="menu">
   <li><a href="accueil.php">Accueil</a>
   <li><a href="equipe.php">Equipes</a>
   <li><a href="ville.php">Par villes</a>
@@ -34,9 +34,9 @@ catch(Exception $e)
 <!-- Contenu principal -->
 <h1>Infos premier league</h1>
 
+<div class="der">
 
-
-<p>choisissez le resultat que vous souhaitez voir</p>
+<p>Choisissez le resultat que vous souhaitez voir</p>
 
 <form action = "" method="post">
     <select id="club" name="club" required>
@@ -107,16 +107,76 @@ $donnees = $reponse->fetch();
 $nom = $reponse2->fetch();
 $nom2 = $reponse3->fetch();
 
-  
-	echo $nom['nom'] . " " .$donnees['score1']."-".$donnees['score2']. "  ".$nom2['nom'] ." ";
+ ?>
+ <p><?php 
+	echo $nom['nom'] . " " .$donnees['score1']."-".$donnees['score2']. "  ".$nom2['nom'] ."<br/><br/> ";
 $reponse->closeCursor();
-}
+}?>
+</p>
 
-?>
+<p>Ajouter rencontre
+<form action = "ajout_rencontre.php" method="post">
+    <select id="club" name="equipe1" required>
+        <option value ="1" selected=""> Manchester City</option>
+        <option value ="2"> Manchester United</option>
+        <option value ="3"> Tottenham Hotspur</option>
+        <option value ="4"> Liverpool FC</option>
+        <option value ="5"> Chelsea FC</option>
+        <option value ="6"> Arsenal FC</option>
+        <option value ="7"> Burnley FC</option>
+        <option value ="8"> Everton</option>
+        <option value ="9"> Leicester City FC</option>
+        <option value ="10"> Newcastle United</option>
+        <option value ="11"> Crystal Palace FC</option>
+        <option value ="12"> AFC Bournmouth</option>
+        <option value ="13"> West Ham United</option>
+        <option value ="14"> Watford FC</option>
+        <option value ="15"> Brighton & Hove Albion</option>
+        <option value ="16"> Huddersfield Town</option>
+        <option value ="17"> Southampton FC</option>
+        <option value ="18"> Wolverhampton Wanderers</option>
+        <option value ="19"> Cardiff City FC</option>
+        <option value ="20"> Fulham FC</option>
+    </select>
 
-<!-- Signer et dater la page, c'est une question de politesse! -->
-<address>Fait le 5 avriljb 2004<br>
-  par moi.</address>
+  
+  
+    <select id="club2" name="equipe2" required>
+        <option value ="1" selected=""> Manchester City</option>
+        <option value ="2"> Manchester United</option>
+        <option value ="3"> Tottenham Hotspur</option>
+        <option value ="4"> Liverpool FC</option>
+        <option value ="5"> Chelsea FC</option>
+        <option value ="6"> Arsenal FC</option>
+        <option value ="7"> Burnley FC</option>
+        <option value ="8"> Everton</option>
+        <option value ="9"> Leicester City FC</option>
+        <option value ="10"> Newcastle United</option>
+        <option value ="11"> Crystal Palace FC</option>
+        <option value ="12"> AFC Bournmouth</option>
+        <option value ="13"> West Ham United</option>
+        <option value ="14"> Watford FC</option>
+        <option value ="15"> Brighton & Hove Albion</option>
+        <option value ="16"> Huddersfield Town</option>
+        <option value ="17"> Southampton FC</option>
+        <option value ="18"> Wolverhampton Wanderers</option>
+        <option value ="19"> Cardiff City FC</option>
+        <option value ="20"> Fulham FC</option>
+    </select><br><br>
+
+<input type="number" name="score1" placeholder="score 1" required>
+<input type="number" name="score2" placeholder="score 2" required>
+<input type="text" name="date" placeholder="date jj/mm/aaaa" required>
+<input type="number" name="id" placeholder="identifiant" required>
+
+<input type = "submit" name="envoi" value = "Envoyer"><br><br>
+</form>
+</p>
+
+
+
+
+</div>
 
 </body>
 </html>

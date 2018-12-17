@@ -10,7 +10,7 @@ ini_set('display_errors','off');
 	
 	<body> 
 
-		<ul class="navbar">
+		<ul class="menu">
   			<li><a href="accueil.php">Accueil</a>
   			<li><a href="equipe.php">Equipes</a>
   			<li><a href="ville.php">Par villes</a>

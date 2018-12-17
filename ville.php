@@ -17,7 +17,7 @@ catch(Exception $e)
 } ?>
 <html>
 <head>
-  <title>Ma première page avec du style</title>
+  <title>Recherche ville</title>
    <meta charset="utf-8" />
 
         <link rel="stylesheet" href="style.css" />
@@ -26,7 +26,7 @@ catch(Exception $e)
 <body>
 
 <!-- Menu de navigation du site -->
-<ul class="navbar">
+<ul class="menu">
   <li><a href="accueil.php">Accueil</a>
   <li><a href="equipe.php">Equipes</a>
   <li><a href="ville.php">Par villes</a>
@@ -35,13 +35,13 @@ catch(Exception $e)
 </ul>
 
 <!-- Contenu principal -->
-<h1>Infos premier league</h1>
+<h1>Base de donnees Premier League</h1>
 
 
+<div class="recherche">
+<p>Rechercher club par la ville</p>
 
-<p>Rechercher la ville</p>
-
-<form method="post" action="">
+<form method="post" class="as" action="">
 
       <input type="text" id="recherche" name="recherche" placeholder="tapez le nom d'une ville" required>
       <input type = "submit" name="envoi" value = "Envoyer">
@@ -53,19 +53,29 @@ if(isset($_POST['envoi'])){
 $ville = $_POST['recherche'];
 $reponse = $bdd->query('SELECT * FROM club WHERE ville LIKE "'.$ville.'%"');
 
+?>
+<table>
 
+  
+
+       
+
+  
+<?php
 while ($donnees = $reponse->fetch())
-{
-	echo $donnees['nom'] . '<br />';
+{  ?><?php
+  echo''.$donnees['nom'] . '<br />';
 	//echo $donnees['annee_creation'] . '<br />';
+  ?>
+
+<?php
 }
 $reponse->closeCursor();
 }
 ?>
+</table>
 
-<!-- Signer et dater la page, c'est une question de politesse! -->
-<address>Fait le 5 avril 2004<br>
-  par moi.</address>
+</div>
 
 </body>
 </html>
