@@ -27,7 +27,7 @@
 
 <p><h3> Bienvenue !!!! </h3>
 
-Sur cette page vous pouvez affichez les clubs et les joueurs qui sont inscrits dans la base de données,vous pouvez aussi voir les resultats des confrontations de 2 equipes .Il y a aussi la possibilité d'ajouter ,modifier et supprimer des entrées de la base de données pour cela aller à l'onglet du menu correspondant.
+Sur cette page vous pouvez affichez les clubs et les joueurs qui sont inscrits dans la base de données à travers plusieurs recherches,vous pouvez aussi voir les resultats des confrontations de 2 equipes .Il y a aussi la possibilité d'ajouter ,modifier et supprimer des entrées de la base de données pour cela aller à l'onglet du menu correspondant.
 </p>
 </div>
 

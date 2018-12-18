@@ -1,49 +1,36 @@
-<?php
-session_start();
-
-$bdd = new PDO('mysql:host=localhost;dbname=espace', 'root', '');
-
-if(isset($_POST['formconnexion'])) {
-   $mailconnect = htmlspecialchars($_POST['mailconnect']);
-   $mdpconnect = sha1($_POST['mdpconnect']);
-   if(!empty($mailconnect) AND !empty($mdpconnect)) {
-      $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mdp = ?");
-      $requser->execute(array($mailconnect, $mdpconnect));
-      $userexist = $requser->rowCount();
-      if($userexist == 1) {
-         $userinfo = $requser->fetch();
-         $_SESSION['id'] = $userinfo['id'];
-         $_SESSION['pseudo'] = $userinfo['pseudo'];
-         $_SESSION['mail'] = $userinfo['mail'];
-         header("Location: profil.php?id=".$_SESSION['id']);
-      } else {
-         $erreur = "Mauvais mail ou mot de passe !";
-      }
-   } else {
-      $erreur = "Tous les champs doivent être complétés !";
-   }
-}
-?>
 <html>
-   <head>
-      <title>TUTO PHP</title>
-      <meta charset="utf-8">
-   </head>
-   <body>
-      <div align="center">
-         <h2>Connexion</h2>
-         <br /><br />
-         <form method="POST" action="">
-            <input type="email" name="mailconnect" placeholder="Mail" />
-            <input type="password" name="mdpconnect" placeholder="Mot de passe" />
-            <br /><br />
-            <input type="submit" name="formconnexion" value="Se connecter !" />
-         </form>
-         <?php
-         if(isset($erreur)) {
-            echo '<font color="red">'.$erreur."</font>";
-         }
-         ?>
-      </div>
-   </body>
+<head>
+  <title>Accueil</title>
+   <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- Menu de navigation du site -->
+<ul class="menu">
+  <li><a href="#">Accueil</a>
+  <li><a href="equipe.php">Equipes</a>
+  <li><a href="ville.php">Par villes</a>
+  <li><a href="joueurs.php">Joueurs</a>
+  <li><a href="rencontre.php">Rencontres</a>
+</ul>
+
+<!-- Contenu principal -->
+<h1>Base de donnees Premier League</h1>
+<img class="fut" src="fut.jpg">
+<div class="corps">
+
+
+
+
+<p><h3> Bienvenue !!!! </h3>
+
+Sur cette page vous pouvez affichez les clubs et les joueurs qui sont inscrits dans la base de données,vous pouvez aussi voir les resultats des confrontations de 2 equipes .Il y a aussi la possibilité d'ajouter ,modifier et supprimer des entrées de la base de données pour cela aller à l'onglet du menu correspondant.
+</p>
+</div>
+
+
+</body>
 </html>

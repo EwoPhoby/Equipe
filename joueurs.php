@@ -27,7 +27,7 @@ catch(Exception $e)
 
 <!-- Menu de navigation du site -->
 <ul class="menu">
-  <li><a href="accueil.php">Accueil</a>
+  <li><a href="index.php">Accueil</a>
   <li><a href="equipe.php">Equipes</a>
   <li><a href="ville.php">Par villes</a>
   <li><a href="joueurs.php">Joueurs</a>
@@ -59,6 +59,7 @@ catch(Exception $e)
 <?php
 if(isset($_POST['envoi'])){
 $nationalite = $_POST['nationalite'];  // Storing Selected Value In Variable
+?><p><?php
 echo "Voici les joueurs de nationalité: " .$nationalite;  // Displaying Selected Value
 echo '<br />';
 
@@ -72,8 +73,8 @@ while ($donnees = $reponse->fetch())
 }
 $reponse->closeCursor();
 }
-?>
-
+?></p>
+<br><br>
 <p>Chercher par leur équipe
   <form action = "" method="post">
     <select id="club" name="club" required>
@@ -105,7 +106,8 @@ $reponse->closeCursor();
 <?php
 if(isset($_POST['envoi2'])){
 $club = $_POST['club'];  // Storing Selected Value In Variable
-$equipe = $bdd->query('SELECT nom FROM club WHERE id = "' . $club . '"');
+$equipe = $bdd->query('SELECT nom FROM club WHERE id = "' . $club . '"');?>
+<p><?php
 echo "Voici les joueurs de l'equipe sélectionée " /*.$club*/;  // Displaying Selected Value
 echo '<br /><br/>';
 
@@ -121,7 +123,7 @@ while ($donnees = $reponse2->fetch())
 $reponse2->closeCursor();
 }
 ?>
-
+</p>
 
 <p>Rechercher par nom</p>
 
@@ -137,18 +139,20 @@ if(isset($_POST['envoi3'])){
 $recherche = $_POST['recherche'];
 $reponse = $bdd->query('SELECT * FROM joueur WHERE nom LIKE "'.$recherche.'%"');
 
-
+?>
+  <p><?php
 while ($n = $reponse->fetch())
 {
+
   echo $n['nom'] . ' '.$n['prenom'] .'<br/>';
   //echo $donnees['annee_creation'] . '<br />';
 }
 $reponse->closeCursor();
 }
 ?>
+</p>
 
-
-
+<br>
 
 
 
@@ -210,20 +214,7 @@ $reponse->closeCursor();
 
 </form>
 
-<?php
-if(isset($_POST['envoi3'])){
-$recherche = $_POST['recherche'];
-$reponse = $bdd->query('SELECT * FROM joueur WHERE nom LIKE "'.$recherche.'%"');
 
-
-while ($n = $reponse->fetch())
-{
-  echo $n['nom'] . ' '.$n['prenom'] .'<br/>';
-  //echo $donnees['annee_creation'] . '<br />';
-}
-$reponse->closeCursor();
-}
-?>
 
 </div>
 </body>

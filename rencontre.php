@@ -24,7 +24,7 @@ catch(Exception $e)
 
 <!-- Menu de navigation du site -->
 <ul class="menu">
-  <li><a href="accueil.php">Accueil</a>
+  <li><a href="index.php.php">Accueil</a>
   <li><a href="equipe.php">Equipes</a>
   <li><a href="ville.php">Par villes</a>
   <li><a href="joueurs.php">Joueurs</a>
@@ -32,7 +32,7 @@ catch(Exception $e)
 </ul>
 
 <!-- Contenu principal -->
-<h1>Infos premier league</h1>
+<h1>Base de donnees Premier League</h1>
 
 <div class="der">
 
@@ -109,7 +109,7 @@ $nom2 = $reponse3->fetch();
 
  ?>
  <p><?php 
-	echo $nom['nom'] . " " .$donnees['score1']."-".$donnees['score2']. "  ".$nom2['nom'] ."<br/><br/> ";
+	echo $donnees['date_match']. "<br/> " .$nom['nom'] . " " .$donnees['score1']."-".$donnees['score2']. "  ".$nom2['nom'] ."<br/><br/> ";
 $reponse->closeCursor();
 }?>
 </p>

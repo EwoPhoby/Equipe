@@ -1,4 +1,3 @@
-
 <html>
    <head>
       <title>TUTO PHP</title>
@@ -16,7 +15,7 @@
          </form>
          <?php
         
-         }
+         
          ?>
       </div>
    </body>
